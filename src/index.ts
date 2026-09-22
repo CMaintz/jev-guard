@@ -2,6 +2,12 @@
 export { guard } from './guard.js';
 export type { GuardResult, GuardOptions } from './guard.js';
 
+export { enforce, GuardBlockedError } from './enforce.js';
+export type { EnforceOptions } from './enforce.js';
+
+export { wrapTool } from './adapters/wrap-tool.js';
+export type { WrapToolOptions } from './adapters/wrap-tool.js';
+
 export { score, noul, choice } from './policy.js';
 export type { ToolCall, Verdict, Dimension, Readout, GuardPolicy } from './policy.js';
 
