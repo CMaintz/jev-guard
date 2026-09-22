@@ -16,17 +16,20 @@ All notable changes to this project are documented here. Format: [Keep a Changel
   human-in-the-loop handler (fail-safe: denies without one). `observe` mode logs
   without enforcing.
 - **v0.2 `wrapTool()`** — framework-agnostic HOF that guards + enforces any tool's
-  execute function; a blocked call throws before the tool runs. LangChain/Vercel
-  adapters will be thin specializations of this.
+  execute function; a blocked call throws before the tool runs.
+- **v0.2 framework adapters** (dependency-free, structural types, subpath exports):
+  - `jev-guard/langchain` — `jevGuardMiddleware()` for LangChain JS's `wrapToolCall` hook.
+  - `jev-guard/vercel` — `guardVercelTool()` wraps a Vercel AI SDK tool's `execute`,
+    preserving `description`/`inputSchema`.
 
 ### Verified
 
-- `mise run gate` (lint → typecheck → test → audit) passes locally; 14 unit tests.
+- `mise run gate` (lint → typecheck → test → audit) passes locally; 19 unit tests.
+- Adapter APIs confirmed against current LangChain JS (`createMiddleware`/`wrapToolCall`)
+  and Vercel AI SDK (`tool({ execute })`) docs — not guessed.
 
 ### TODO before v0.1.0
 
-- Dedicated LangChain (JS) middleware + Vercel AI SDK adapters (thin over `wrapTool`) —
-  pending confirmation of each framework's current tool-interception API.
 - LangChain Python parity.
 - Exercise end-to-end against a live Jev key.
 - Policy presets (shell / SQL / filesystem / payments).

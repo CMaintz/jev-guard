@@ -9,11 +9,21 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./langchain": {
+      "types": "./dist/adapters/langchain.d.ts",
+      "import": "./dist/adapters/langchain.js"
+    },
+    "./vercel": {
+      "types": "./dist/adapters/vercel-ai.d.ts",
+      "import": "./dist/adapters/vercel-ai.js"
     }
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "engines": {
     "node": ">=20"
   },
@@ -23,7 +33,16 @@
     "test": "vitest run",
     "test:watch": "vitest"
   },
-  "keywords": ["jev", "typesafe", "llm", "agent", "guardrail", "tool-calls", "safety", "langchain"],
+  "keywords": [
+    "jev",
+    "typesafe",
+    "llm",
+    "agent",
+    "guardrail",
+    "tool-calls",
+    "safety",
+    "langchain"
+  ],
   "devDependencies": {
     "@types/node": "^22.7.0",
     "@vitest/coverage-v8": "^5.0.1",
