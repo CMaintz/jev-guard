@@ -21,10 +21,12 @@ All notable changes to this project are documented here. Format: [Keep a Changel
   - `jev-guard/langchain` — `jevGuardMiddleware()` for LangChain JS's `wrapToolCall` hook.
   - `jev-guard/vercel` — `guardVercelTool()` wraps a Vercel AI SDK tool's `execute`,
     preserving `description`/`inputSchema`.
+- **v0.2 policy presets** — `shellPolicy` / `filesystemPolicy` / `sqlPolicy` / `paymentsPolicy`:
+  ready-made policies for the common dangerous tool classes (spread to customize).
 
 ### Verified
 
-- `mise run gate` (lint → typecheck → test → audit) passes locally; 19 unit tests.
+- `mise run gate` (lint → typecheck → test → audit) passes locally; 23 unit tests.
 - Adapter APIs confirmed against current LangChain JS (`createMiddleware`/`wrapToolCall`)
   and Vercel AI SDK (`tool({ execute })`) docs — not guessed.
 
@@ -32,4 +34,4 @@ All notable changes to this project are documented here. Format: [Keep a Changel
 
 - LangChain Python parity.
 - Exercise end-to-end against a live Jev key.
-- Policy presets (shell / SQL / filesystem / payments).
+- README demo (GIF of an agent's `rm -rf` getting blocked mid-loop).

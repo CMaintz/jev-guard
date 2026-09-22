@@ -11,6 +11,8 @@ export type { WrapToolOptions } from './adapters/wrap-tool.js';
 export { score, noul, choice } from './policy.js';
 export type { ToolCall, Verdict, Dimension, Readout, GuardPolicy } from './policy.js';
 
+export { shellPolicy, filesystemPolicy, sqlPolicy, paymentsPolicy } from './presets.js';
+
 export type { Decision } from './core/decide.js';
 
 // Shared provider port (verified against docs.typesafe.ai/api).

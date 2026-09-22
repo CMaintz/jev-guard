@@ -74,6 +74,19 @@ import { wrapTool } from 'jev-guard';
 const safeExecute = wrapTool('bash', bash.execute, policy, provider);
 ```
 
+## Presets
+
+Skip writing a policy from scratch — start from a preset for the dangerous tool classes and spread to tweak:
+
+```ts
+import { shellPolicy, sqlPolicy } from 'jev-guard';
+
+const safeBash = wrapTool('bash', bash.execute, shellPolicy(), provider);
+const strictShell = { ...shellPolicy(), escalateBelow: 0.9 };
+```
+
+`shellPolicy` · `filesystemPolicy` · `sqlPolicy` · `paymentsPolicy` — each blocks the clearly-dangerous cases, holds the borderline ones, and allows the rest.
+
 ## Honest limitations
 
 - **NOT a security boundary.** ~68% accuracy and a probabilistic model mean a determined prompt-injection can slip through. Keep real sandboxing, least-privilege creds, and allowlists — jev-guard is a cheap semantic layer _on top_, not a replacement.
