@@ -29,9 +29,11 @@ All notable changes to this project are documented here. Format: [Keep a Changel
 - `mise run gate` (lint → typecheck → test → audit) passes locally; 23 unit tests.
 - Adapter APIs confirmed against current LangChain JS (`createMiddleware`/`wrapToolCall`)
   and Vercel AI SDK (`tool({ execute })`) docs — not guessed.
+- **Live-validated against the real Jev API** (`examples/smoke.mjs`): `rm -rf` → block
+  (destructive 0.97), `ls` → allow; ~360–500 ms/call. Wire shape + full pipeline confirmed.
 
 ### TODO before v0.1.0
 
 - LangChain Python parity.
-- Exercise end-to-end against a live Jev key.
 - README demo (GIF of an agent's `rm -rf` getting blocked mid-loop).
+- npm publish.
