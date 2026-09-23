@@ -2,6 +2,8 @@
 
 **A guardrail that vets an LLM agent's tool calls through [TypeSafe AI's Jev](https://typesafe.ai/) before they run** — so an autonomous agent can't `rm -rf` your box on a bad hunch.
 
+![jev-guard blocking a destructive tool call and allowing a safe one](demo/demo.svg)
+
 Every proposed tool call goes through one near-free Jev check (~70–500 ms) that returns typed risk decisions + calibrated confidence. Safe calls **allow**, clearly destructive ones **block**, uncertain ones **hold** for a human. Because Jev is ~free, you can afford to guard _every_ call — and because it's confidence-aware, uncertainty **fails safe**.
 
 ```ts
