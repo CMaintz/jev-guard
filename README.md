@@ -44,7 +44,7 @@ A denylist can't tell "delete the temp cache" from "delete prod". A second LLM i
 
 ## Status
 
-**v0.2** — the framework-agnostic `guard()` + pure core + shared provider port (verified against [docs.typesafe.ai/api](https://docs.typesafe.ai/api)), the **enforcement layer** (`enforce` / `wrapTool` / `observe` / `onHold`), **LangChain + Vercel AI SDK adapters**, and **policy presets**. 23 tests, passes the [Foundry](https://github.com/CMaintz/foundry) gate, and **validated against the real Jev API** (`rm -rf` → block, `ls` → allow; ~360–500 ms/call). See the [full spec](../SPECS/jev-guard.md).
+**v1.0** — `guard()` + pure core + shared provider port (verified against [docs.typesafe.ai/api](https://docs.typesafe.ai/api)), the **enforcement layer** (`enforce` / `wrapTool` / `observe` / `onHold`), **LangChain + Vercel AI SDK adapters**, **policy presets**, and **verdict caching** (`createCache` — identical repeat calls skip the round-trip). 29 tests, passes the [Foundry](https://github.com/CMaintz/foundry) gate, and **validated against the real Jev API** (`rm -rf` → block, `ls` → allow; ~360–500 ms/call). See the [full spec](../SPECS/jev-guard.md).
 
 ## Framework adapters
 

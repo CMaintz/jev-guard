@@ -1,10 +1,19 @@
 {
   "name": "jev-guard",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Framework-agnostic guardrail that vets an LLM agent's proposed tool calls through TypeSafe AI Jev before they execute.",
   "license": "MIT",
   "author": "Christoffer Maintz",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CMaintz/jev-guard.git"
+  },
+  "homepage": "https://github.com/CMaintz/jev-guard#readme",
+  "bugs": {
+    "url": "https://github.com/CMaintz/jev-guard/issues"
+  },
   "type": "module",
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -31,7 +40,8 @@
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "jev",
