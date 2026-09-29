@@ -4,6 +4,10 @@ All notable changes to this project are documented here. Format: [Keep a Changel
 
 ## [Unreleased]
 
+### Changed
+
+- Default model is now `jev-latest` (was the pinned `jev-1.13.0`), tracking the recommended model. Pass an explicit model to `TypeSafeProvider` to pin a version for reproducibility.
+
 ### Planned
 
 - LangChain **Python** parity (a PyPI package mirroring the core).

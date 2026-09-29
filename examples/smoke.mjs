@@ -8,7 +8,7 @@ if (!key) {
   process.exit(1);
 }
 
-const provider = new TypeSafeProvider(key, process.env.JEV_MODEL ?? 'jev-1.13.0');
+const provider = new TypeSafeProvider(key, process.env.JEV_MODEL ?? 'jev-latest');
 const policy = shellPolicy();
 
 const cases = [
